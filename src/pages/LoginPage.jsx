@@ -75,6 +75,7 @@ export default function LoginPage() {
                     <Grid container justifyContent="flex-end">
                         <Grid item>
                             <Link
+                                underline="none"
                                 component="button"
                                 variant="body2"
                                 onClick={() => navigate('/register')}

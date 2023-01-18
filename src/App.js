@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 import UserStationsPage from './pages/UserStationsPage';
+import ChargingStationPage from './pages/ChargingStationPage';
 
 const queryClient = new QueryClient()
 
@@ -27,6 +28,7 @@ function App() {
               <Route path="/profile" element={<AuthRoute><ProfilePage /></AuthRoute>} />
               <Route path="/create-station" element={<AuthRoute><CreateStationPage /></AuthRoute>} />
               <Route path="/user-stations" element={<AuthRoute><UserStationsPage /></AuthRoute>} />
+              <Route path="/station/:id" element={<ChargingStationPage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Header>

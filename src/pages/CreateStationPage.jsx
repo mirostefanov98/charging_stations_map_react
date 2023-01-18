@@ -30,7 +30,7 @@ export default function CreateStationPage() {
             <CssBaseline />
             <Box sx={{ mt: 5 }}>
                 <Typography component="h1" variant="h5" textAlign='center'>
-                    Добави нова станция
+                    Добави нова зарядна станция
                 </Typography>
             </Box>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>

@@ -23,7 +23,7 @@ const menuItems = [
         path: '/'
     },
     {
-        label: 'Добави нова станция на картата',
+        label: 'Добави зарядна станция на картата',
         path: '/create-station'
     },
 ];
@@ -148,7 +148,7 @@ export default function Header({ children }) {
 
                         {auth ? (
                             <Box sx={{ flexGrow: 0 }}>
-                                <Tooltip title="Open settings">
+                                <Tooltip title="Потребителско меню">
                                     <IconButton
                                         size="large"
                                         aria-label="account of current user"
@@ -182,7 +182,7 @@ export default function Header({ children }) {
                                         </MenuItem>
                                     }
                                     <MenuItem key="user-stations" onClick={() => { navigate('/user-stations'); handleCloseUserMenu(); }}>
-                                        <Typography textAlign="center">Моите станции</Typography>
+                                        <Typography textAlign="center">Моите зарядни станции</Typography>
                                     </MenuItem>
                                     <MenuItem key="profile" onClick={() => { navigate('/profile'); handleCloseUserMenu(); }}>
                                         <Typography textAlign="center">Профил</Typography>
