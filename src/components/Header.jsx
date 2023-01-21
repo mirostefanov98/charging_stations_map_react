@@ -59,24 +59,26 @@ export default function Header({ children }) {
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <EvStationRoundedIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} fontSize='large' />
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            onClick={() => navigate('/')}
-                            sx={{
-                                mr: 2,
-                                display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                color: 'inherit',
-                                textDecoration: 'none',
-                                flexGrow: 1,
-                                cursor: 'pointer'
-                            }}
-                        >
-                            ChargingStationsMap
-                        </Typography>
+                        <Box component='span' sx={{ flexGrow: 1 }}>
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                component="a"
+                                onClick={() => navigate('/')}
+                                sx={{
+                                    mr: 2,
+                                    display: { xs: 'none', md: 'flex' },
+                                    fontFamily: 'monospace',
+                                    fontWeight: 700,
+                                    color: 'inherit',
+                                    textDecoration: 'none',
+                                    cursor: 'pointer',
+                                    width: 'fit-content'
+                                }}
+                            >
+                                ChargingStationsMap
+                            </Typography>
+                        </Box>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
@@ -108,14 +110,14 @@ export default function Header({ children }) {
                                 }}
                             >
                                 {menuItems.map((page) => (
-                                    <MenuItem key={page.label} onClick={() => navigate(page.path)}>
+                                    <MenuItem key={page.label} onClick={() => { handleCloseNavMenu(); navigate(page.path); }}>
                                         <Typography textAlign="center">{page.label}</Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
                         </Box>
-                        <EvStationRoundedIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} fontSize='medium' />
 
+                        <EvStationRoundedIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} fontSize='medium' />
                         <Typography
                             variant="h7"
                             noWrap
@@ -138,7 +140,7 @@ export default function Header({ children }) {
                             {menuItems.map((page) => (
                                 <Button
                                     key={page.label}
-                                    onClick={() => navigate(page.path)}
+                                    onClick={() => { handleCloseNavMenu(); navigate(page.path); }}
                                     sx={{ my: 2, color: 'white', display: 'block' }}
                                 >
                                     {page.label}

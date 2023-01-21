@@ -69,8 +69,8 @@ export default function ChargingStationPage() {
                     <CardContent sx={{ py: 0 }}>
                         <ImageList sx={{ width: '100%', height: 205 }} cols={matches ? 1 : 5}>
                             {station.images.map((image, key) => (
-                                <Link href={image} target="_blank">
-                                    <ImageListItem key={key}>
+                                <Link key={key} href={image} target="_blank">
+                                    <ImageListItem >
                                         <img
                                             src={`${image}?w=164&h=164&fit=crop&auto=format`}
                                             srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
@@ -101,7 +101,7 @@ export default function ChargingStationPage() {
                                 {station.dislikes}
                             </Typography>
                             <Link href={googleUrl} target="_blank" underline="none">
-                                <Button>Навигирай до зарядната станция</Button>
+                                <Button variant="outlined">Навигирай до зарядната станция</Button>
                             </Link>
                         </Stack>
                     </CardActions>

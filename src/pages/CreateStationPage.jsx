@@ -1,6 +1,6 @@
 import { Box, Button, Checkbox, CircularProgress, Container, CssBaseline, FormControl, FormControlLabel, FormGroup, FormHelperText, FormLabel, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material";
 import { useCreateStation } from "../services/useCreateStation";
-import { useFilters } from "../services/useFIlters";
+import { useFilters } from "../services/useFilters";
 import { UploadFile } from "@mui/icons-material";
 import { useRef } from "react";
 
@@ -119,7 +119,7 @@ export default function CreateStationPage() {
                                 <FormHelperText sx={{ color: 'error.main' }}>{error.response.data.errors.plug_types}</FormHelperText>
                             }
                             {data.data.plug_types.map(type =>
-                                <FormControlLabel name="plug_types" key={type.id} value={type.id} control={<Checkbox />} label={type.name} />
+                                <FormControlLabel name="plug_types[]" key={type.id} value={type.id} control={<Checkbox />} label={type.name} />
                             )}
                         </FormGroup>
                     </Grid>
@@ -130,7 +130,7 @@ export default function CreateStationPage() {
                                 <FormHelperText sx={{ color: 'error.main' }}>{error.response.data.errors.payment_types}</FormHelperText>
                             }
                             {data.data.payment_types.map(type =>
-                                <FormControlLabel name="payment_types" key={type.id} value={type.id} control={<Checkbox />} label={type.name} />
+                                <FormControlLabel name="payment_types[]" key={type.id} value={type.id} control={<Checkbox />} label={type.name} />
                             )}
                         </FormGroup>
                     </Grid>
