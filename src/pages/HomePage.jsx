@@ -151,7 +151,7 @@ export default function HomePage() {
                         chunkedLoading={true}
                         removeOutsideVisibleBounds={true}
                         showCoverageOnHover={false}
-                        maxClusterRadius={30}
+                        maxClusterRadius={15}
                     >
                         {dataStations?.data?.map(station =>
                             <Marker
@@ -233,6 +233,6 @@ export default function HomePage() {
                     </Grid>
                 </Grid>
             </Container>
-        </Box>
+        </Box >
     );
 }
